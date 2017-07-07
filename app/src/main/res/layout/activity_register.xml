@@ -11,6 +11,7 @@
         android:padding="@dimen/app_padding">
 
         <ImageView
+            android:id="@+id/img_profile"
             android:layout_width="@dimen/img_size"
             android:layout_height="@dimen/img_size"
             android:layout_gravity="center"
