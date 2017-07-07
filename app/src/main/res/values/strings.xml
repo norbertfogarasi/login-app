@@ -20,6 +20,16 @@
     <string name="tv_birthday">Select your birthday</string>
     <string name="btn_register">Register</string>
     <string name="profile_image_description">Profile picture</string>
+    <!-- Error messages -->
+    <string name="err_firstname">Enter your first name!</string>
+    <string name="err_lastname">Enter your last name!</string>
+    <string name="err_email">Enter your e-mail address!</string>
+    <string name="err_email_not_valid">Not a valid e-mail address</string>
+    <string name="err_password">Enter a password!</string>
+    <string name="err_password_confirm">Confirm your password!</string>
+    <string name="err_passwords_dont_match">Passwords don\'t match!</string>
+    <string name="err_birthday">Select your birth date!</string>
+    <string name="err_gender">Select your gender!</string>
 
     <string name="tv_logged_in">You\'ve successfully logged in!</string>
     <string name="btn_back">Back</string>

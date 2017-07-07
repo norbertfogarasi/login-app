@@ -58,6 +58,7 @@
             android:minLines="1" />
 
         <RadioGroup
+            android:id="@+id/rg_gender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/view_margin_below"
@@ -71,13 +72,14 @@
                 android:textSize="@dimen/tv_size" />
 
             <RadioButton
+                android:id="@+id/rb_male"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/radiobtn_male"
-                android:textSize="@dimen/tv_size"
-                android:checked="true"/>
+                android:textSize="@dimen/tv_size" />
 
             <RadioButton
+                android:id="@+id/rb_female"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/radiobtn_female"
@@ -129,6 +131,7 @@
             android:minLines="1" />
 
         <Button
+            android:id="@+id/btn_register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

@@ -9,8 +9,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.view.View;
-
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
@@ -19,6 +19,8 @@ import java.util.Locale;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class RegisterActivity extends Activity {
@@ -29,6 +31,8 @@ public class RegisterActivity extends Activity {
     private Calendar calendar;
     private ImageView imgProfile;
     private EditText etFirstName, etLastName, etEmail, etPassword, etPasswordConfirm;
+    private RadioGroup rgGender;
+    private RadioButton rbMale, rbFemale;
     private TextView tvDate;
 
     @Override
@@ -39,13 +43,16 @@ public class RegisterActivity extends Activity {
     }
 
     private void initViews() {
+        imgProfile = (ImageView) findViewById(R.id.img_profile);
         etFirstName = (EditText) findViewById(R.id.et_firstname);
         etLastName = (EditText) findViewById(R.id.et_lastname);
         etEmail = (EditText) findViewById(R.id.et_email);
         etPassword = (EditText) findViewById(R.id.et_password);
         etPasswordConfirm = (EditText) findViewById(R.id.et_password_confirm);
         tvDate = (TextView) findViewById(R.id.tv_birthday);
-        imgProfile = (ImageView) findViewById(R.id.img_profile);
+        rgGender = (RadioGroup) findViewById(R.id.rg_gender);
+        rbMale = (RadioButton) findViewById(R.id.rb_male);
+        rbFemale = (RadioButton) findViewById(R.id.rb_female);
 
         //Capture an image
         findViewById(R.id.btn_capture).setOnClickListener(new View.OnClickListener() {
@@ -67,8 +74,6 @@ public class RegisterActivity extends Activity {
 
         //Date picker
         calendar = Calendar.getInstance();
-
-        calendar = Calendar.getInstance();
         final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int monthOfYear, int dayOfMonth) {
@@ -85,6 +90,14 @@ public class RegisterActivity extends Activity {
                         calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
+
+        //Register
+        findViewById(R.id.btn_register).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                validateFields();
+            }
+        });
     }
 
     private void updateTextView() {
@@ -97,26 +110,72 @@ public class RegisterActivity extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        switch(requestCode) {
+        switch (requestCode) {
             case CAMERA_REQUEST:
-                if(resultCode == Activity.RESULT_OK) {
+                if (resultCode == Activity.RESULT_OK) {
                     Bitmap photo = (Bitmap) data.getExtras().get("data");
                     imgProfile.setImageBitmap(photo);
                 }
                 break;
             case SELECT_PHOTO:
-                if(resultCode == Activity.RESULT_OK) {
+                if (resultCode == Activity.RESULT_OK) {
                     Uri selectedImage = data.getData();
                     try {
                         InputStream imageStream = getContentResolver().openInputStream(selectedImage);
                         Bitmap yourSelectedImage = BitmapFactory.decodeStream(imageStream);
                         imgProfile.setImageBitmap(yourSelectedImage);
 
-                    } catch(FileNotFoundException e) {
+                    } catch (FileNotFoundException e) {
                         e.printStackTrace();
                     }
 
                 }
+        }
+    }
+
+    private void validateFields() {
+        //Checks if the fields are set properly
+        //If not, warns the user
+        if (etFirstName.getText().toString().equals("")) {
+            etFirstName.setError(getResources().getString(R.string.err_firstname));
+        }
+        if (etLastName.getText().toString().equals("")) {
+            etLastName.setError(getResources().getString(R.string.err_lastname));
+        }
+        if (etEmail.getText().toString().equals("")) {
+            etEmail.setError(getResources().getString(R.string.err_email));
+        } else if (!isValidEmail(etEmail.getText().toString())) {
+            etEmail.setError(getResources().getString(R.string.err_email_not_valid));
+        }
+        if(etPassword.getText().toString().equals("")) {
+            etPassword.setError(getResources().getString(R.string.err_password));
+        }
+        if(etPasswordConfirm.getText().toString().equals("")) {
+            etPasswordConfirm.setError(getResources().getString(R.string.err_password_confirm));
+        } else if(!etPasswordConfirm.getText().toString().equals(
+                etPassword.getText().toString())) {
+            //If the passwords don't match
+            etPasswordConfirm.setError(getResources().getString(R.string.err_passwords_dont_match));
+        }
+        if(tvDate.getText().toString().equals(getResources().getString(R.string.tv_birthday))) {
+            tvDate.setError(getResources().getString(R.string.err_birthday));
+        } else {
+            tvDate.setError(null);
+        }
+        if(rgGender.getCheckedRadioButtonId()<=0){//Grp is your radio group object
+            rbFemale.setError(getResources().getString(R.string.err_gender));
+        }
+        else {
+            rbFemale.setError(null);
+        }
+    }
+
+    private boolean isValidEmail(CharSequence target) {
+        //Checks if an e-mail address is valid or not
+        if (TextUtils.isEmpty(target)) {
+            return false;
+        } else {
+            return android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
         }
     }
 }
