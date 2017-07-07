@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">LoginApp</string>
+    <string name="icon_description">icon</string>
+
+    <!-- LoginActivity -->
+    <string name="edit_hint_username">Username</string>
+    <string name="edit_hint_password">Password</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_sign_up">Sign up</string>
+
+    <!-- RegisterActivity -->
+    <string name="tv_gender">Gender:\  </string>
+    <string name="et_firstname">First name</string>
+    <string name="et_lastname">Last name</string>
+    <string name="radiobtn_male">Male</string>
+    <string name="radiobtn_female">Female</string>
+    <string name="hint_et_email">E-mail</string>
+    <string name="hint_et_password">Password</string>
+    <string name="hint_et_password_confirm">Confirm password</string>
+    <string name="tv_birthday">Select your birthday</string>
+    <string name="btn_register">Register</string>
+    <string name="profile_image_description">Profile picture</string>
+
+    <string name="tv_logged_in">You\'ve successfully logged in!</string>
+    <string name="btn_back">Back</string>
+    <string name="btn_take_photo">Capture</string>
+    <string name="btn_choose_photo">Choose</string>
+</resources>
