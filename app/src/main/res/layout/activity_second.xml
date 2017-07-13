@@ -15,11 +15,21 @@
         android:textSize="@dimen/tv_size" />
 
     <Button
+<<<<<<< HEAD
         android:id="@+id/btn_log_out"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/tv_logged_in"
         android:text="@string/btn_log_out"/>
+=======
+        android:id="@+id/btn_logged_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_logged_in"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/btn_back" />
+>>>>>>> 3c98e8a6087ed16b3d8ced3960d8af0dcf61b92f
 
 </RelativeLayout>

@@ -3,6 +3,7 @@
     <string name="icon_description">icon</string>
 
     <!-- LoginActivity -->
+<<<<<<< HEAD
     <string name="edit_hint_username">E-mail</string>
     <string name="edit_hint_password">Password</string>
     <string name="btn_login">Login</string>
@@ -12,6 +13,14 @@
     <!-- RegisterActivity -->
     <string name="btn_take_photo">Capture</string>
     <string name="btn_choose_photo">Choose</string>
+=======
+    <string name="edit_hint_username">Username</string>
+    <string name="edit_hint_password">Password</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_sign_up">Sign up</string>
+
+    <!-- RegisterActivity -->
+>>>>>>> 3c98e8a6087ed16b3d8ced3960d8af0dcf61b92f
     <string name="tv_gender">Gender:\  </string>
     <string name="et_firstname">First name</string>
     <string name="et_lastname">Last name</string>
@@ -27,15 +36,26 @@
     <string name="err_firstname">Enter your first name!</string>
     <string name="err_lastname">Enter your last name!</string>
     <string name="err_email">Enter your e-mail address!</string>
+<<<<<<< HEAD
     <string name="err_email_not_valid">Not a valid e-mail address!</string>
+=======
+    <string name="err_email_not_valid">Not a valid e-mail address</string>
+>>>>>>> 3c98e8a6087ed16b3d8ced3960d8af0dcf61b92f
     <string name="err_password">Enter a password!</string>
     <string name="err_password_confirm">Confirm your password!</string>
     <string name="err_passwords_dont_match">Passwords don\'t match!</string>
     <string name="err_birthday">Select your birth date!</string>
     <string name="err_gender">Select your gender!</string>
 
+<<<<<<< HEAD
     <!--SecondActivity -->
     <string name="tv_logged_in">You\'ve successfully logged in!</string>
     <string name="btn_log_out">Log out</string>
 
+=======
+    <string name="tv_logged_in">You\'ve successfully logged in!</string>
+    <string name="btn_back">Back</string>
+    <string name="btn_take_photo">Capture</string>
+    <string name="btn_choose_photo">Choose</string>
+>>>>>>> 3c98e8a6087ed16b3d8ced3960d8af0dcf61b92f
 </resources>

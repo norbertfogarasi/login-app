@@ -3,6 +3,7 @@ package com.lynxsolutions.norbertfogarasi.loginapp;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+<<<<<<< HEAD
 import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
@@ -25,10 +26,17 @@ public class LoginActivity extends Activity {
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
 
+=======
+import android.view.View;
+
+public class LoginActivity extends Activity {
+
+>>>>>>> 3c98e8a6087ed16b3d8ced3960d8af0dcf61b92f
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+<<<<<<< HEAD
 
         //Firebase
         mAuth = FirebaseAuth.getInstance();
@@ -70,15 +78,26 @@ public class LoginActivity extends Activity {
         //EditText for password
         etPassword = (EditText) findViewById(R.id.et_login_password);
 
+=======
+        initViews();
+    }
+
+    private void initViews() {
+>>>>>>> 3c98e8a6087ed16b3d8ced3960d8af0dcf61b92f
         //Login button
         findViewById(R.id.btn_login).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+<<<<<<< HEAD
                 if(validFields()) {
                     if(validFields()) {
                         signIn(etEmail.getText().toString(), etPassword.getText().toString());
                     }
                 }
+=======
+                startActivity(new Intent(LoginActivity.this, SecondActivity.class));
+                finish();
+>>>>>>> 3c98e8a6087ed16b3d8ced3960d8af0dcf61b92f
             }
         });
 
@@ -91,6 +110,7 @@ public class LoginActivity extends Activity {
             }
         });
     }
+<<<<<<< HEAD
 
     //Firebase
     private void signIn(String email, String password) {
@@ -122,4 +142,6 @@ public class LoginActivity extends Activity {
         }
         return valid;
     }
+=======
+>>>>>>> 3c98e8a6087ed16b3d8ced3960d8af0dcf61b92f
 }

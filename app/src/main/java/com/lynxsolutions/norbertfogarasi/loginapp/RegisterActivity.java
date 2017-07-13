@@ -8,24 +8,34 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+<<<<<<< HEAD
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 
+=======
+import android.support.annotation.Nullable;
+import android.text.TextUtils;
+import android.view.View;
+>>>>>>> 3c98e8a6087ed16b3d8ced3960d8af0dcf61b92f
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3c98e8a6087ed16b3d8ced3960d8af0dcf61b92f
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+<<<<<<< HEAD
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -37,6 +47,11 @@ public class RegisterActivity extends Activity {
 
     private static final String TAG = RegisterActivity.class.getSimpleName();
 
+=======
+
+public class RegisterActivity extends Activity {
+
+>>>>>>> 3c98e8a6087ed16b3d8ced3960d8af0dcf61b92f
     private static final int CAMERA_REQUEST = 1888;
     private static final int SELECT_PHOTO = 1889;
 
@@ -47,14 +62,20 @@ public class RegisterActivity extends Activity {
     private RadioButton rbMale, rbFemale;
     private TextView tvDate;
 
+<<<<<<< HEAD
     private FirebaseAuth mAuth;
 
+=======
+>>>>>>> 3c98e8a6087ed16b3d8ced3960d8af0dcf61b92f
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         initViews();
+<<<<<<< HEAD
         mAuth = FirebaseAuth.getInstance();
+=======
+>>>>>>> 3c98e8a6087ed16b3d8ced3960d8af0dcf61b92f
     }
 
     private void initViews() {
@@ -98,7 +119,10 @@ public class RegisterActivity extends Activity {
                 updateTextView();
             }
         };
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3c98e8a6087ed16b3d8ced3960d8af0dcf61b92f
         tvDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -107,6 +131,7 @@ public class RegisterActivity extends Activity {
             }
         });
 
+<<<<<<< HEAD
 
         //Register
         findViewById(R.id.btn_register).setOnClickListener(new View.OnClickListener() {
@@ -115,6 +140,13 @@ public class RegisterActivity extends Activity {
                 if (validFields()) {
                     createAccount(etEmail.getText().toString(), etPassword.getText().toString());
                 }
+=======
+        //Register
+        findViewById(R.id.btn_register).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                validateFields();
+>>>>>>> 3c98e8a6087ed16b3d8ced3960d8af0dcf61b92f
             }
         });
     }
@@ -152,6 +184,7 @@ public class RegisterActivity extends Activity {
         }
     }
 
+<<<<<<< HEAD
     private boolean validFields() {
         //Checks if the fields are set properly
         //If not, warns the user
@@ -187,10 +220,38 @@ public class RegisterActivity extends Activity {
         }
         if (tvDate.getText().toString().equals(getResources().getString(R.string.tv_birthday))) {
             valid = false;
+=======
+    private void validateFields() {
+        //Checks if the fields are set properly
+        //If not, warns the user
+        if (etFirstName.getText().toString().equals("")) {
+            etFirstName.setError(getResources().getString(R.string.err_firstname));
+        }
+        if (etLastName.getText().toString().equals("")) {
+            etLastName.setError(getResources().getString(R.string.err_lastname));
+        }
+        if (etEmail.getText().toString().equals("")) {
+            etEmail.setError(getResources().getString(R.string.err_email));
+        } else if (!isValidEmail(etEmail.getText().toString())) {
+            etEmail.setError(getResources().getString(R.string.err_email_not_valid));
+        }
+        if(etPassword.getText().toString().equals("")) {
+            etPassword.setError(getResources().getString(R.string.err_password));
+        }
+        if(etPasswordConfirm.getText().toString().equals("")) {
+            etPasswordConfirm.setError(getResources().getString(R.string.err_password_confirm));
+        } else if(!etPasswordConfirm.getText().toString().equals(
+                etPassword.getText().toString())) {
+            //If the passwords don't match
+            etPasswordConfirm.setError(getResources().getString(R.string.err_passwords_dont_match));
+        }
+        if(tvDate.getText().toString().equals(getResources().getString(R.string.tv_birthday))) {
+>>>>>>> 3c98e8a6087ed16b3d8ced3960d8af0dcf61b92f
             tvDate.setError(getResources().getString(R.string.err_birthday));
         } else {
             tvDate.setError(null);
         }
+<<<<<<< HEAD
         if (rgGender.getCheckedRadioButtonId() <= 0) {
             valid = false;
             rbFemale.setError(getResources().getString(R.string.err_gender));
@@ -201,6 +262,16 @@ public class RegisterActivity extends Activity {
     }
 
 
+=======
+        if(rgGender.getCheckedRadioButtonId()<=0){//Grp is your radio group object
+            rbFemale.setError(getResources().getString(R.string.err_gender));
+        }
+        else {
+            rbFemale.setError(null);
+        }
+    }
+
+>>>>>>> 3c98e8a6087ed16b3d8ced3960d8af0dcf61b92f
     private boolean isValidEmail(CharSequence target) {
         //Checks if an e-mail address is valid or not
         if (TextUtils.isEmpty(target)) {
@@ -209,6 +280,7 @@ public class RegisterActivity extends Activity {
             return android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
         }
     }
+<<<<<<< HEAD
 
     private void createAccount(String email, String password) {
         mAuth.createUserWithEmailAndPassword(email, password)
@@ -222,4 +294,6 @@ public class RegisterActivity extends Activity {
                     }
                 });
     }
+=======
+>>>>>>> 3c98e8a6087ed16b3d8ced3960d8af0dcf61b92f
 }
