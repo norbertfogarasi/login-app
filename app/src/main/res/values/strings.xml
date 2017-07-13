@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">LoginApp</string>
+    <string name="icon_description">icon</string>
+
+    <!-- LoginActivity -->
+    <string name="edit_hint_username">E-mail</string>
+    <string name="edit_hint_password">Password</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_sign_up">Sign up</string>
+    <string name="err_login_password">Enter your password!</string>
+
+    <!-- RegisterActivity -->
+    <string name="btn_take_photo">Capture</string>
+    <string name="btn_choose_photo">Choose</string>
+    <string name="tv_gender">Gender:\  </string>
+    <string name="et_firstname">First name</string>
+    <string name="et_lastname">Last name</string>
+    <string name="radiobtn_male">Male</string>
+    <string name="radiobtn_female">Female</string>
+    <string name="hint_et_email">E-mail</string>
+    <string name="hint_et_password">Password</string>
+    <string name="hint_et_password_confirm">Confirm password</string>
+    <string name="tv_birthday">Select your birthday</string>
+    <string name="btn_register">Register</string>
+    <string name="profile_image_description">Profile picture</string>
+    <!-- Error messages -->
+    <string name="err_firstname">Enter your first name!</string>
+    <string name="err_lastname">Enter your last name!</string>
+    <string name="err_email">Enter your e-mail address!</string>
+    <string name="err_email_not_valid">Not a valid e-mail address!</string>
+    <string name="err_password">Enter a password!</string>
+    <string name="err_password_confirm">Confirm your password!</string>
+    <string name="err_passwords_dont_match">Passwords don\'t match!</string>
+    <string name="err_birthday">Select your birth date!</string>
+    <string name="err_gender">Select your gender!</string>
+
+    <!--SecondActivity -->
+    <string name="tv_logged_in">You\'ve successfully logged in!</string>
+    <string name="btn_log_out">Log out</string>
+
+</resources>

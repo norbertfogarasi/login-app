@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1042043355062",
+    "firebase_url": "https://loginapp-2-3b22f.firebaseio.com",
+    "project_id": "loginapp-2-3b22f",
+    "storage_bucket": "loginapp-2-3b22f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1042043355062:android:854391b53f8c2016",
+        "android_client_info": {
+          "package_name": "com.lynxsolutions.norbertfogarasi.loginapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1042043355062-5h7budf4b7uep5m0kj79o8i4d320i6em.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lynxsolutions.norbertfogarasi.loginapp",
+            "certificate_hash": "42b2cf6db59cb8d7cf5066334a73a227668d32f0"
+          }
+        },
+        {
+          "client_id": "1042043355062-cmbommdhgaj5aq1qpah6qgtq0h6cffj4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAb64gLysPCCVgOwTdT_ZiK8ncaRqr5FqI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1042043355062-cmbommdhgaj5aq1qpah6qgtq0h6cffj4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
