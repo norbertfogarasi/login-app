@@ -45,12 +45,8 @@
             android:hint="@string/et_firstname"
             android:maxLength="20"
             android:maxLines="1"
-<<<<<<< HEAD
             android:minLines="1"
             android:inputType="text"/>
-=======
-            android:minLines="1" />
->>>>>>> 3c98e8a6087ed16b3d8ced3960d8af0dcf61b92f
 
         <EditText
             android:id="@+id/et_lastname"
@@ -60,12 +56,8 @@
             android:hint="@string/et_lastname"
             android:maxLength="20"
             android:maxLines="1"
-<<<<<<< HEAD
             android:minLines="1"
             android:inputType="text"/>
-=======
-            android:minLines="1" />
->>>>>>> 3c98e8a6087ed16b3d8ced3960d8af0dcf61b92f
 
         <RadioGroup
             android:id="@+id/rg_gender"
@@ -114,10 +106,6 @@
             android:layout_marginBottom="@dimen/view_margin_below"
             android:hint="@string/hint_et_email"
             android:inputType="textEmailAddress"
-<<<<<<< HEAD
-=======
-            android:maxLength="20"
->>>>>>> 3c98e8a6087ed16b3d8ced3960d8af0dcf61b92f
             android:maxLines="1"
             android:minLines="1" />
 
