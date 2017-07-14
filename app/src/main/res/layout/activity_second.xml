@@ -6,6 +6,12 @@
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/tv_account_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/tv_size"
+        android:text="@string/tv_account_info"/>
+    <TextView
         android:id="@+id/tv_logged_in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

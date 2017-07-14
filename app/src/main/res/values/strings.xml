@@ -37,5 +37,6 @@
     <!--SecondActivity -->
     <string name="tv_logged_in">You\'ve successfully logged in!</string>
     <string name="btn_log_out">Log out</string>
+    <string name="tv_account_info">Account Information:</string>
 
 </resources>
